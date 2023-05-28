@@ -76,3 +76,5 @@ export const signin = async (req, res) => {
     res.status(400).json({ message: "signin api problem" });
   }
 };
+
+export const orderFun = async (req, res) => {};

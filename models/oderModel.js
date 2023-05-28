@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
 
-const orderSchema = mongoose.Schema(
-  {
-    title: { type: String, trim: true, require: true },
-    price: { type: String, trim: true, require: true },
-  },
-  { timetamps: true }
-);
+const bookSchema = new mongoose.Schema({
+  title: String,
+  subtitle: String,
+  isbn13: String,
+  price: String,
+  image: String,
+  url: String,
+});
 
-const order = mongoose.model("Note", noteSchema);
+const BookOrder = mongoose.model("Book", bookSchema);
 
-export default order;
+export default BookOrder;
