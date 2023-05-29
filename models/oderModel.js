@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const bookSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  phone: String,
-  address: String,
   title: String,
   subtitle: String,
   isbn13: String,
@@ -13,6 +9,14 @@ const bookSchema = new mongoose.Schema({
   url: String,
 });
 
-const BookOrder = mongoose.model("Book", bookSchema);
+const orderSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  phone: String,
+  address: String,
+  books: [bookSchema],
+});
 
-export default BookOrder;
+const Order = mongoose.model("Order", orderSchema);
+
+export default Order;
